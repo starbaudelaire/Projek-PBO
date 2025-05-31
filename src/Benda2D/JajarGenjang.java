@@ -1,0 +1,58 @@
+package Benda2D;
+
+import Benda.BendaGeometri;
+
+import java.io.*;
+import java.util.*;
+
+/**
+ * 
+ */
+public class JajarGenjang implements BendaGeometri {
+
+    public double alas;
+    public double tinggi;
+    public double sudutLancip;
+    private double luasJajarGenjang;
+    private double kelilingJajarGenjang;
+    private double sisiMiringJajarGenjang;
+
+    public JajarGenjang(double alas, double tinggi, double sudutLancip) {
+        this.alas = alas;
+        this.tinggi = tinggi;
+        this.sudutLancip = sudutLancip;
+        this.luasJajarGenjang = hitungLuas();
+        this.kelilingJajarGenjang = hitungKeliling();
+    }
+
+    @Override
+    public double hitungLuas() {
+        return alas * tinggi;
+    }
+
+    public double hitungLuas(double sisiPrisma) {
+        return sisiPrisma * tinggi;
+    }
+
+    public double hitungLuas(double tinggiPrisma, double sisiPrisma) {
+        return sisiPrisma * tinggiPrisma;
+    }
+
+    public double getLuasJajarGenjang() {
+        return luasJajarGenjang;
+    }
+
+    @Override
+    public double hitungKeliling() {
+        return 2 * (alas + tinggi);
+    }
+
+    public double getSisiMiringJajarGenjang() {
+        return 0;
+    }
+
+    public double getKelilingJajarGenjang() {
+        return 0;
+    }
+
+}
