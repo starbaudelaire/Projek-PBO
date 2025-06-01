@@ -14,6 +14,7 @@ public class PrismaJajarGenjang extends JajarGenjang implements Benda3D {
 
     public PrismaJajarGenjang(double alas, double tinggi, double sudutLancip, double tinggiPrismaJajarGenjang, double sisi) {
         super(alas, sudutLancip, tinggi);
+        this.sisiPrismaJajarGenjang = sisi;
         this.tinggiPrismaJajarGenjang = tinggi;
         volumePrismaJajarGenjang = hitungVolume();
         luasPermukaanPrismaJajarGenjang = hitungLuasPermukaan();
@@ -39,7 +40,7 @@ public class PrismaJajarGenjang extends JajarGenjang implements Benda3D {
     }
 
     public double getLuasPermukaanPrismaJajarGenjang() {
-        return hitungLuasPermukaan();
+        return luasPermukaanPrismaJajarGenjang;
     }
 
 }
