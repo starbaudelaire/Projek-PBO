@@ -22,6 +22,11 @@ public class LimasJajarGenjang extends JajarGenjang implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Limas Jajar Genjang";
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasJajarGenjang() * tinggiLimas;
     }

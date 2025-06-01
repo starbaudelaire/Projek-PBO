@@ -19,6 +19,11 @@ public class JuringLingkaran extends Lingkaran {
     }
 
     @Override
+    public String getNama(){
+        return "Juring Lingkaran";
+    }
+
+    @Override
     public double hitungLuas() {
         return getLuasLingkaran() * sudut;
     }

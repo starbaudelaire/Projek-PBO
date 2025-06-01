@@ -1,14 +1,11 @@
 package Benda2D;
 
-import Benda.BendaGeometri;
-
-import java.io.*;
-import java.util.*;
+import Benda.Benda2D;
 
 /**
  * 
  */
-public class Lingkaran implements BendaGeometri {
+public class Lingkaran extends Benda2D {
 
     public double jariJari;
     private double luasLingkaran;
@@ -19,6 +16,11 @@ public class Lingkaran implements BendaGeometri {
         this.jariJari = jariJari;
         luasLingkaran = hitungLuas();
         kelilingLingkaran = hitungKeliling();
+    }
+
+    @Override
+    public String getNama(){
+        return "Lingkaran";
     }
 
     @Override

@@ -1,14 +1,11 @@
 package Benda2D;
 
-import Benda.BendaGeometri;
-
-import java.io.*;
-import java.util.*;
+import Benda.Benda2D;
 
 /**
  * 
  */
-public class LayangLayang implements BendaGeometri {
+public class LayangLayang extends Benda2D {
 
     public double diagonal1;
     public double diagonal2;
@@ -24,6 +21,11 @@ public class LayangLayang implements BendaGeometri {
         this.sisi2 = sisi2;
         luasLayangLayang = hitungLuas();
         kelilingLayangLayang = hitungKeliling();
+    }
+
+    @Override
+    public String getNama(){
+        return "Layang-Layang" ;
     }
 
     @Override

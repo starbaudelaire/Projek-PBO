@@ -24,6 +24,11 @@ public class PrismaBelahKetupat extends BelahKetupat implements Benda3D{
     }
 
     @Override
+    public String getNama(){
+        return "Prisma Belah Ketupat";
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasBelahKetupat() * tinggiPrisma;
     }

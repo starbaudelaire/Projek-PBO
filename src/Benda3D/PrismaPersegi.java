@@ -22,6 +22,11 @@ public class PrismaPersegi extends Persegi implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Prisma Persegi";
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasPersegi() * tinggiPrisma;
     }

@@ -22,6 +22,11 @@ public class PrismaPersegiPanjang extends PersegiPanjang implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Prisma Persegi Panjang";
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasPersegiPanjang() * tinggiBalok;
     }

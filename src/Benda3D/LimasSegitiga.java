@@ -24,6 +24,11 @@ public class LimasSegitiga extends Segitiga implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Limas Segitiga";
+    }
+
+    @Override
     public double hitungVolume() {
         return (double)1/3 * (tinggiLimasSegitiga * getLuasSegitiga());
     }

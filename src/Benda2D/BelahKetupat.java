@@ -1,14 +1,11 @@
 package Benda2D;
 
-import Benda.BendaGeometri;
-
-import java.io.*;
-import java.util.*;
+import Benda.Benda2D;
 
 /**
  * 
  */
-public class BelahKetupat implements BendaGeometri {
+public class BelahKetupat extends Benda2D {
     public double diagonal1;
     public double diagonal2;
     private double sisiMiringBelahKetupat;
@@ -21,6 +18,11 @@ public class BelahKetupat implements BendaGeometri {
         this.sisiMiringBelahKetupat = 0.0;
         this.luasBelahKetupat = hitungLuas();
         this.kelilingBelahKetupat = hitungKeliling();
+    }
+
+    @Override
+    public String getNama(){
+        return "Belah Ketupat";
     }
 
     @Override

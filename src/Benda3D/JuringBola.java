@@ -10,29 +10,37 @@ import java.util.*;
  */
 public class JuringBola extends Bola implements Benda3D {
     private double theta;
-    private double luasJuring;
-    private double kelilingJuring;
+    private double volumeJuringBola;
+    private double luasPermukaanJuring;
 
     public JuringBola(double jariJari, double theta) {
         super(jariJari);
+        this.theta = theta;
+        volumeJuringBola = hitungVolume();
+        luasPermukaanJuring = hitungLuasPermukaan();
     }
 
     @Override
-    public double hitungLuas() {
-        return 0;
-    }
-
-    public double getLuasJuring() {
-        return 0;
+    public String getNama(){
+        return "Juring Bola";
     }
 
     @Override
-    public double hitungKeliling() {
-        return 0;
+    public double hitungVolume() {
+        return (double)(theta/360) * super.getVolumeBola();
     }
 
-    public double getKelilingJuring() {
-        return 0;
+    public double hitungLuasPermukaan(){
+        return (double)(theta/360) * super.getLuasPermukaanBola();
     }
+
+    public double getLuasPermukaanJuring() {
+        return luasPermukaanJuring;
+    }
+
+    public double getVolumeJuringBola() {
+        return volumeJuringBola;
+    }
+
 
 }

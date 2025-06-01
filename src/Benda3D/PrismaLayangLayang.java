@@ -19,6 +19,11 @@ public class PrismaLayangLayang extends LayangLayang implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Prisma Layang-Layang";
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasLayangLayang() * tinggiPrismaLayangLayang;
     }

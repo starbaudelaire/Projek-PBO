@@ -26,6 +26,11 @@ public class LimasTrapesium extends Trapesium implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Limas Trapesium";
+    }
+
+    @Override
     public double hitungVolume() {
         return (double)1/3 * getLuasTrapesium() * tinggiLimas;
     }

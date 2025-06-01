@@ -24,6 +24,11 @@ public class Kerucut extends Lingkaran implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Kerucut";
+    }
+
+    @Override
     public double hitungVolume() {
         return (double)1/3 * getLuasLingkaran() * tinggiKerucut;
     }

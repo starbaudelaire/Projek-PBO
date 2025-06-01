@@ -22,6 +22,11 @@ public class LimasPersegi extends Persegi implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Limas Persegi";
+    }
+
+    @Override
     public double hitungVolume() {
         return (double)1/3 * tinggiLimasPersegi * getLuasPersegi();
     }

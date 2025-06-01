@@ -1,14 +1,11 @@
 package Benda2D;
 
-import Benda.BendaGeometri;
-
-import java.io.*;
-import java.util.*;
+import Benda.Benda2D;
 
 /**
  * 
  */
-public class Trapesium implements BendaGeometri {
+public class Trapesium extends Benda2D {
     public double sisiSejajar1;
     public double sisiSejajar2;
     public double tinggi;
@@ -21,6 +18,11 @@ public class Trapesium implements BendaGeometri {
         this.sisiSejajar2 = sisiSejajar2;
         this.tinggi = tinggi;
         this.sisiMiring = 0;
+    }
+
+    @Override
+    public String getNama(){
+        return "Trapesium";
     }
 
     @Override

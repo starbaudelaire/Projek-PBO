@@ -11,31 +11,51 @@ import java.util.*;
  */
 public class KerucutTerpancung extends Lingkaran implements Benda3D {
     private double jariJariAtas;
-    private double jariJari;
+    private double garisPelukis;
     private double tinggi;
+    private double luasSelimut;
     private double volumeKerucutTerpancung;
     private double luasPermukaanKerucutTerpancung;
 
     public KerucutTerpancung(double tinggi, double jariJariAtas, double jariJari) {
         super(jariJari);
+        this.jariJariAtas = jariJariAtas;
+        this.tinggi = tinggi;
+        garisPelukis = hitungGarisPelukis();
+        luasSelimut = hitungLuasSelimut();
+        volumeKerucutTerpancung = hitungVolume();
+        luasPermukaanKerucutTerpancung = hitungLuasPermukaan();
+    }
+
+    @Override
+    public String getNama(){
+        return "Kerucut Terpancung";
     }
 
     @Override
     public double hitungVolume() {
-        return 0;
+        return ((1.0/3.0) * super.pi * tinggi) * (jariJariAtas * jariJariAtas + super.jariJari * super.jariJari + jariJariAtas * super.jariJari);
     }
 
     @Override
     public double hitungLuasPermukaan() {
-        return 0;
+        return luasSelimut + super.getKelilingLingkaran() + (super.pi * Math.pow(jariJariAtas, 2));
+    }
+
+    public double hitungLuasSelimut() {
+        return super.pi * (super.jariJari + jariJariAtas) * garisPelukis;
+    }
+
+    public double hitungGarisPelukis(){
+        return Math.sqrt(Math.pow(super.jariJari - jariJariAtas, 2) + Math.pow(tinggi, 2));
     }
 
     public double getLuasPermukaanKerucutTerpancung() {
-        return 0;
+        return luasPermukaanKerucutTerpancung;
     }
 
     public double getVolumeKerucutTerpancung() {
-        return 0;
+        return volumeKerucutTerpancung;
     }
 
 }

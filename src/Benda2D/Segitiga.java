@@ -1,14 +1,11 @@
 package Benda2D;
 
-import Benda.BendaGeometri;
-
-import java.io.*;
-import java.util.*;
+import Benda.Benda2D;
 
 /**
  * 
  */
-public class Segitiga implements BendaGeometri {
+public class Segitiga extends Benda2D {
 
     public double sisi;
     public double tinggi;
@@ -20,6 +17,11 @@ public class Segitiga implements BendaGeometri {
         this.tinggi = tinggi;
         this.luasSegitiga = hitungLuas();
         this.kelilingSegitiga = hitungKeliling();
+    }
+
+    @Override
+    public String getNama(){
+        return "Segitiga";
     }
 
     @Override

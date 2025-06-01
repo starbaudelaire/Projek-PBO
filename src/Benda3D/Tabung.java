@@ -10,30 +10,39 @@ import java.util.*;
  * 
  */
 public class Tabung extends Lingkaran implements Benda3D {
-    private double tinggiSilinder;
-    private double volumeSilinder;
-    private double luasPermukaanSilinder;
+    private double tinggiTabung;
+    private double volumeTabung;
+    private double luasPermukaanTabung;
 
-    public Tabung(double jariJari, double tinggiSilinder) {
+    public Tabung(double jariJari, double tinggiTabung) {
         super(jariJari);
+        this.tinggiTabung = tinggiTabung;
+        volumeTabung = hitungVolume();
+        luasPermukaanTabung = hitungLuasPermukaan();
+    }
+
+    @Override
+    public String getNama(){
+        return "Tabung";
     }
 
     @Override
     public double hitungVolume() {
-        return 0;
+
+        return super.getLuasLingkaran() * tinggiTabung;
     }
 
-    public double getVolumeSilinder() {
-        return 0;
+    public double getVolumeTabung() {
+        return volumeTabung;
     }
 
     @Override
     public double hitungLuasPermukaan() {
-        return 0;
+        return super.getKelilingLingkaran() * (super.jariJari + tinggiTabung);
     }
 
-    public double getLuasPermukaanSilinder() {
-        return 0;
+    public double getLuasPermukaanTabung() {
+        return luasPermukaanTabung;
     }
 
 }

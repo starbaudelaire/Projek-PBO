@@ -16,24 +16,23 @@ public class CincinBola extends Bola implements Benda3D {
 
     public CincinBola(double jariJari, double jariJariDalam, double jarakDuaBidang) {
         super(jariJari);
+        this.jarakDuaBidang = jarakDuaBidang;
+        luasPermukaanCincinBola = hitungLuasPermukaan();
     }
 
     @Override
-    public double hitungVolume() {
-        return 0;
+    public String getNama(){
+        return "Cincin Bola";
     }
 
-    public double getVolumeCincinBola() {
-        return 0;
-    }
 
     @Override
     public double hitungLuasPermukaan() {
-        return 0;
+        return 2 * getPi() * jariJari * jarakDuaBidang ;
     }
 
     public double getLuasPermukaanCincinBola() {
-        return 0;
+        return luasPermukaanCincinBola;
     }
 
 }

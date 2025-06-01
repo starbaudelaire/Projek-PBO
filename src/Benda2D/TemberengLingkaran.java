@@ -1,10 +1,5 @@
 package Benda2D;
 
-import Benda.BendaGeometri;
-
-import java.io.*;
-import java.util.*;
-
 /**
  * 
  */
@@ -22,6 +17,11 @@ public class TemberengLingkaran extends JuringLingkaran {
         this.busur = busur;
         luasTemberengLingkaran = hitungLuas();
         KelilingTemberengLingkaran = hitungKeliling();
+    }
+
+    @Override
+    public String getNama(){
+        return "Tembereng Lingkaran";
     }
 
     @Override

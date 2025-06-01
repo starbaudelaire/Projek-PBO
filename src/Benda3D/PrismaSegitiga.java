@@ -18,10 +18,17 @@ public class PrismaSegitiga extends Segitiga implements Benda3D {
 
     public PrismaSegitiga(double alas, double tinggi, double tinggiPrismaSegitiga, double sisiA, double sisiB, double sisiC) {
         super(alas,tinggi);
-
+        this.sisiA = sisiA;
+        this.sisiB = sisiB;
+        this.sisiC = sisiC;
         volumePrismaSegitiga = hitungVolume();
         luasPermukaanPrismaSegitiga = hitungLuasPermukaan();
         luasSisiTegak = hitungLuasSisiTegak();
+    }
+
+    @Override
+    public String getNama(){
+        return "Prisma Segitiga";
     }
 
     @Override

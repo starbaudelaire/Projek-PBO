@@ -20,6 +20,11 @@ public class Bola extends Lingkaran implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Bola";
+    }
+
+    @Override
     public double hitungVolume() {
         return (double)(4/3 * getLuasLingkaran() * jariJari);
     }

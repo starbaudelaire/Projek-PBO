@@ -24,6 +24,11 @@ public class LimasBelahKetupat extends BelahKetupat implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Limas Belah Ketupat";
+    }
+
+    @Override
     public double hitungVolume() {
         return (double)((double)1/3 * ((double)1/2 * super.diagonal1 * super.diagonal2) * tinggiLimas);
     }

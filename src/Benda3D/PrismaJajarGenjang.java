@@ -20,6 +20,11 @@ public class PrismaJajarGenjang extends JajarGenjang implements Benda3D {
     }
 
     @Override
+    public String getNama(){
+        return "Prisma Jajar Genjang";
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasJajarGenjang() * tinggiPrismaJajarGenjang;
     }
