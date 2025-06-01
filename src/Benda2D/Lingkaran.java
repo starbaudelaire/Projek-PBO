@@ -10,7 +10,7 @@ public class Lingkaran extends Benda2D {
     public double jariJari;
     private double luasLingkaran;
     private double kelilingLingkaran;
-    public final double pi = 3.14;
+    public final double pi = Math.PI;
 
     public Lingkaran(double jariJari) {
         this.jariJari = jariJari;
