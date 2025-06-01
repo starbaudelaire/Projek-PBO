@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class LayangLayang implements BendaGeometri {
+public class LayangLayang implements BendaGeometri, Runnable{
 
     public double diagonal1;
     public double diagonal2;
@@ -22,8 +22,13 @@ public class LayangLayang implements BendaGeometri {
         this.diagonal2 = diagonal2;
         this.sisi1 = sisi1;
         this.sisi2 = sisi2;
-        luasLayangLayang = hitungLuas();
-        kelilingLayangLayang = hitungKeliling();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Layang Layang");
+        this.luasLayangLayang = hitungLuas();
+        this.kelilingLayangLayang = hitungKeliling();
     }
 
     @Override

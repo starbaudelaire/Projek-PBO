@@ -8,20 +8,25 @@ import java.util.*;
 /**
  * 
  */
-public class TemberengLingkaran extends JuringLingkaran {
+public class TemberengLingkaran extends JuringLingkaran implements Runnable{
 
     private double taliBusur;
     private double busur;
     private double sudut;
     private double luasTemberengLingkaran;
-    private double KelilingTemberengLingkaran;
+    private double kelilingTemberengLingkaran;
 
     public TemberengLingkaran(double jariJari, double taliBusur, double sudut, double busur) {
         super(jariJari, sudut);
         this.taliBusur = taliBusur;
         this.busur = busur;
-        luasTemberengLingkaran = hitungLuas();
-        KelilingTemberengLingkaran = hitungKeliling();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Tembereng Lingkaran");
+        this.luasTemberengLingkaran = hitungLuas();
+        this.kelilingTemberengLingkaran = hitungKeliling();
     }
 
     @Override
@@ -39,7 +44,7 @@ public class TemberengLingkaran extends JuringLingkaran {
     }
 
     public double getKelilingTembereng() {
-        return KelilingTemberengLingkaran;
+        return kelilingTemberengLingkaran;
     }
 
 }

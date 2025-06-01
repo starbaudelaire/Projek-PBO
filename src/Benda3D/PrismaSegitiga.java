@@ -25,6 +25,13 @@ public class PrismaSegitiga extends Segitiga implements Benda3D {
     }
 
     @Override
+    public void run() {
+        System.out.println("Menghitung Prisma Segitiga");
+        this.volumePrismaSegitiga = hitungVolume();
+        this.luasPermukaanPrismaSegitiga = hitungLuasPermukaan();
+    }
+
+    @Override
     public double hitungVolume() {
         return getLuasSegitiga() * tinggiPrismaSegitiga;
     }

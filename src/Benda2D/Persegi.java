@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class Persegi implements BendaGeometri {
+public class Persegi implements BendaGeometri, Runnable{
 
     public double sisi;
     private double luasPersegi;
@@ -16,17 +16,13 @@ public class Persegi implements BendaGeometri {
 
     public Persegi(double sisi) {
         this.sisi = sisi;
+    }
 
-        try{
-            if(sisi <= 0){
-                throw new ArithmeticException();
-            }
-        }catch(ArithmeticException e){
-            System.out.println("Error : " + e.getLocalizedMessage());
-        }
-
-        luasPersegi = hitungLuas();
-        kelilingPersegi = hitungKeliling();
+    @Override
+    public void run() {
+        System.out.println("Menghitung Persegi");
+        this.luasPersegi = hitungLuas();
+        this.kelilingPersegi = hitungKeliling();
     }
 
     @Override

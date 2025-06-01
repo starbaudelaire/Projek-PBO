@@ -10,11 +10,19 @@ import java.util.*;
  */
 public class TemberengBola extends Bola implements Benda3D {
     private double theta;
-    private double luasTembereng;
-    private double kelilingTembereng;
+    private double volumeTembereng;
+    private double luasPermukaanTembereng;
 
     public TemberengBola(double jariJari, double theta) {
         super(jariJari);
+        this.theta = theta;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Tembereng Bola");
+        this.volumeTembereng = hitungVolume();
+        this.luasPermukaanTembereng = hitungLuasPermukaan();
     }
 
     @Override

@@ -17,8 +17,13 @@ public class PrismaPersegiPanjang extends PersegiPanjang implements Benda3D {
     public PrismaPersegiPanjang(double panjang, double lebar, double tinggiBalok) {
         super(panjang, lebar);
         this.tinggiBalok = tinggiBalok;
-        volumeBalok = hitungVolume();
-        luasPermukaanBalok = hitungLuasPermukaan();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Balok");
+        this.volumeBalok = hitungVolume();
+        this.luasPermukaanBalok = hitungLuasPermukaan();
     }
 
     @Override

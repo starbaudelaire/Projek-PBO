@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class PersegiPanjang implements BendaGeometri {
+public class PersegiPanjang implements BendaGeometri, Runnable{
 
     public double panjang;
     public double lebar;
@@ -18,8 +18,13 @@ public class PersegiPanjang implements BendaGeometri {
     public PersegiPanjang(double panjang, double lebar) {
         this.panjang = panjang;
         this.lebar = lebar;
-        luasPersegiPanjang = hitungLuas();
-        kelilingPersegiPanjang = hitungKeliling();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Persegi Panjang");
+        this.luasPersegiPanjang = hitungLuas();
+        this.kelilingPersegiPanjang = hitungKeliling();
     }
 
     @Override

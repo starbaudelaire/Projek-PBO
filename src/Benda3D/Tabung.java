@@ -11,11 +11,19 @@ import java.util.*;
  */
 public class Tabung extends Lingkaran implements Benda3D {
     private double tinggiSilinder;
-    private double volumeSilinder;
-    private double luasPermukaanSilinder;
+    private double volumeTabung;
+    private double luasPermukaanTabung;
 
     public Tabung(double jariJari, double tinggiSilinder) {
         super(jariJari);
+        this.tinggiSilinder = tinggiSilinder;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Tabung");
+        this.volumeTabung = hitungVolume();
+        this.luasPermukaanTabung = hitungLuasPermukaan();
     }
 
     @Override

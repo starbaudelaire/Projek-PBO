@@ -5,10 +5,7 @@ import Benda.BendaGeometri;
 import java.io.*;
 import java.util.*;
 
-/**
- * 
- */
-public class BelahKetupat implements BendaGeometri {
+public class BelahKetupat implements BendaGeometri, Runnable{
     public double diagonal1;
     public double diagonal2;
     private double sisiMiringBelahKetupat;
@@ -19,6 +16,11 @@ public class BelahKetupat implements BendaGeometri {
         this.diagonal1 = diagonal1;
         this.diagonal2 = diagonal2;
         this.sisiMiringBelahKetupat = 0.0;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Belah Ketupat");
         this.luasBelahKetupat = hitungLuas();
         this.kelilingBelahKetupat = hitungKeliling();
     }
@@ -26,7 +28,6 @@ public class BelahKetupat implements BendaGeometri {
     @Override
     public double hitungLuas() {
         return 0.5 * diagonal1 * diagonal2;
-
     }
 
     public double getLuasBelahKetupat() {

@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class LimasBelahKetupat extends BelahKetupat implements Benda3D {
+public class LimasBelahKetupat extends BelahKetupat implements Benda3D, Runnable {
     private double volumeLimasBelahKetupat;
     private double luasPermukaanLimasBelahKetupat;
     private double tinggiLimas;
@@ -19,8 +19,13 @@ public class LimasBelahKetupat extends BelahKetupat implements Benda3D {
         super(diagonal1, diagonal2);
         this.tinggiLimas = tinggiBelahKetupat;
         this.tinggiSisiTegak = tinggiSisiTegak;
-        volumeLimasBelahKetupat = hitungVolume();
-        luasPermukaanLimasBelahKetupat = hitungLuas();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Limas Belah Ketupat");
+        this.volumeLimasBelahKetupat = hitungVolume();
+        this.luasPermukaanLimasBelahKetupat = hitungLuasPermukaan();
     }
 
     @Override

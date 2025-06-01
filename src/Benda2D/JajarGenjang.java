@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class JajarGenjang implements BendaGeometri {
+public class JajarGenjang implements BendaGeometri, Runnable {
 
     public double alas;
     public double tinggi;
@@ -21,6 +21,11 @@ public class JajarGenjang implements BendaGeometri {
         this.alas = alas;
         this.tinggi = tinggi;
         this.sudutLancip = sudutLancip;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Jajar Genjang");
         this.luasJajarGenjang = hitungLuas();
         this.kelilingJajarGenjang = hitungKeliling();
     }

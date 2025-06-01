@@ -19,6 +19,13 @@ public class PrismaTrapesium extends Trapesium implements Benda3D {
     }
 
     @Override
+    public void run() {
+        System.out.println("Menghitung Prisma Trapesium");
+        this.volumePrismaTrapesium = hitungVolume();
+        this.luasPermukaanPrismaTrapesium = hitungLuasPermukaan();
+    }
+
+    @Override
     public double hitungVolume() {
         return 0;
     }

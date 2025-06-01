@@ -6,10 +6,7 @@ import Benda2D.Lingkaran;
 import java.io.*;
 import java.util.*;
 
-/**
- * 
- */
-public class Bola extends Lingkaran implements Benda3D {
+public class Bola extends Lingkaran implements Benda3D, Runnable{
     private double volumeBola;
     private double luasPermukaanBola;
 
@@ -17,6 +14,13 @@ public class Bola extends Lingkaran implements Benda3D {
         super(jariJari);
         volumeBola = hitungVolume();
         luasPermukaanBola = hitungLuasPermukaan();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Bola");
+        this.volumeBola = hitungVolume();
+        this.luasPermukaanBola = hitungLuasPermukaan();
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class LimasJajarGenjang extends JajarGenjang implements Benda3D {
+public class LimasJajarGenjang extends JajarGenjang implements Benda3D, Runnable{
     private double volumeLimasJajarGenjang;
     private double luasPermukaanLimasJajarGenjang;
     private double tinggiLimas;
@@ -17,8 +17,13 @@ public class LimasJajarGenjang extends JajarGenjang implements Benda3D {
     public LimasJajarGenjang(double alasJajarGenjang, double tinggiJajarGenjang, double sudutLancip, double tinggiLimas) {
         super(alasJajarGenjang, sudutLancip, tinggiJajarGenjang);
         this.tinggiLimas = tinggiLimas;
-        volumeLimasJajarGenjang = hitungVolume();
-        luasPermukaanLimasJajarGenjang = hitungLuasPermukaan();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Limas Jajar Genjang");
+        this.volumeLimasJajarGenjang = hitungVolume();
+        this.luasPermukaanLimasJajarGenjang = hitungLuasPermukaan();
     }
 
     @Override

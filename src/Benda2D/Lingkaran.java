@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class Lingkaran implements BendaGeometri {
+public class Lingkaran implements BendaGeometri, Runnable {
 
     public double jariJari;
     private double luasLingkaran;
@@ -17,8 +17,13 @@ public class Lingkaran implements BendaGeometri {
 
     public Lingkaran(double jariJari) {
         this.jariJari = jariJari;
-        luasLingkaran = hitungLuas();
-        kelilingLingkaran = hitungKeliling();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Lingkaran");
+        this.luasLingkaran = hitungLuas();
+        this.kelilingLingkaran = hitungKeliling();
     }
 
     @Override

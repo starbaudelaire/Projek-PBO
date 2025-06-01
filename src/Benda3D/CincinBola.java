@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class CincinBola extends Bola implements Benda3D {
+public class CincinBola extends Bola implements Benda3D, Runnable {
     private double jariJariDalam;
     private double jarakDuaBidang;
     private double volumeCincinBola;
@@ -16,6 +16,13 @@ public class CincinBola extends Bola implements Benda3D {
 
     public CincinBola(double jariJari, double jariJariDalam, double jarakDuaBidang) {
         super(jariJari);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Cinicin Bola");
+        this.volumeCincinBola = hitungVolume();
+        this.luasPermukaanCincinBola = hitungLuasPermukaan();
     }
 
     @Override

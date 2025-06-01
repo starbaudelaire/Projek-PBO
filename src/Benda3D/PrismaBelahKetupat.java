@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class PrismaBelahKetupat extends BelahKetupat implements Benda3D{
+public class PrismaBelahKetupat extends BelahKetupat implements Benda3D, Runnable{
     private double tinggiPrisma;
     private double sisiPrisma;
     private double volumePrismaBelahKetupat;
@@ -19,8 +19,13 @@ public class PrismaBelahKetupat extends BelahKetupat implements Benda3D{
         super(diagonal1, diagonal2);
         this.tinggiPrisma = tinggiPrisma;
         this.sisiPrisma = sisi;
-        volumePrismaBelahKetupat = hitungVolume();
-        luasPermukaanPrismaBelahKetupat = hitungLuasPermukaan();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Prisma Belah Ketupat");
+        this.volumePrismaBelahKetupat = hitungVolume();
+        this.luasPermukaanPrismaBelahKetupat = hitungLuasPermukaan();
     }
 
     @Override

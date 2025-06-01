@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class Segitiga implements BendaGeometri {
+public class Segitiga implements BendaGeometri, Runnable{
 
     public double sisi;
     public double tinggi;
@@ -18,6 +18,11 @@ public class Segitiga implements BendaGeometri {
     public Segitiga(double sisi, double tinggi) {
         this.sisi = sisi;
         this.tinggi = tinggi;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Segitiga");
         this.luasSegitiga = hitungLuas();
         this.kelilingSegitiga = hitungKeliling();
     }

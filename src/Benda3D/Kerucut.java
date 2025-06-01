@@ -11,7 +11,7 @@ import static java.lang.Math.sqrt;
 /**
  * 
  */
-public class Kerucut extends Lingkaran implements Benda3D {
+public class Kerucut extends Lingkaran implements Benda3D, Runnable{
     private double tinggiKerucut;
     private double volumeKerucut;
     private double luasPermukaanKerucut;
@@ -21,6 +21,13 @@ public class Kerucut extends Lingkaran implements Benda3D {
         this.tinggiKerucut = tinggiKerucut;
         luasPermukaanKerucut = hitungLuasPermukaan();
         volumeKerucut = hitungVolume();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Kerucut");
+        this.volumeKerucut = hitungVolume();
+        this.luasPermukaanKerucut = hitungLuasPermukaan();
     }
 
     @Override

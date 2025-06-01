@@ -6,7 +6,7 @@ import Benda2D.JajarGenjang;
 import java.io.*;
 import java.util.*;
 
-public class PrismaJajarGenjang extends JajarGenjang implements Benda3D {
+public class PrismaJajarGenjang extends JajarGenjang implements Benda3D, Runnable {
     private double tinggiPrismaJajarGenjang;
     private double sisiPrismaJajarGenjang;
     private double volumePrismaJajarGenjang;
@@ -15,8 +15,13 @@ public class PrismaJajarGenjang extends JajarGenjang implements Benda3D {
     public PrismaJajarGenjang(double alas, double tinggi, double sudutLancip, double tinggiPrismaJajarGenjang, double sisi) {
         super(alas, sudutLancip, tinggi);
         this.tinggiPrismaJajarGenjang = tinggi;
-        volumePrismaJajarGenjang = hitungVolume();
-        luasPermukaanPrismaJajarGenjang = hitungLuasPermukaan();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Prisma Jajar Genjang");
+        this.volumePrismaJajarGenjang = hitungVolume();
+        this.luasPermukaanPrismaJajarGenjang = hitungLuasPermukaan();
     }
 
     @Override
