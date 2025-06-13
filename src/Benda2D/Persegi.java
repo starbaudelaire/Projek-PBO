@@ -13,7 +13,7 @@ public class Persegi extends Benda2D implements Runnable {
 
     public Persegi(double sisi) {
         this.sisi = sisi;
-
+        System.out.println("sisi = " + sisi);
         try{
             if(sisi <= 0){
                 throw new ArithmeticException();
@@ -21,7 +21,6 @@ public class Persegi extends Benda2D implements Runnable {
         }catch(ArithmeticException e){
             System.out.println("Error : " + e.getLocalizedMessage());
         }
-
     }
 
     @Override
@@ -39,6 +38,11 @@ public class Persegi extends Benda2D implements Runnable {
     @Override
     public double hitungLuas() {
         return sisi * sisi;
+    }
+
+    public double hitungLuas(double sisi){
+        luasPersegi = sisi * sisi;
+        return luasPersegi;
     }
 
     public double getLuasPersegi() {
