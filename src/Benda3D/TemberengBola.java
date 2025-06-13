@@ -8,7 +8,7 @@ import java.util.*;
 /**
  * 
  */
-public class TemberengBola extends Bola implements Benda3D {
+public class TemberengBola extends Bola implements Benda3D, Runnable{
     private double theta;
     private double jarijariLingkaran;
     private double tinggiTembereng;
@@ -20,6 +20,11 @@ public class TemberengBola extends Bola implements Benda3D {
         this.jarijariLingkaran = jarijariLingkaran;
         this.theta = theta;
         this.tinggiTembereng = tinggiTembereng;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung " + getNama());
         volumeTemberengBola = hitungVolume();
         luasPermukaanTemberengBola = hitungLuasPermukaan();
     }

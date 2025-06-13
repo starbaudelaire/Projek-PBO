@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class PrismaPersegiPanjang extends PersegiPanjang implements Benda3D {
+public class PrismaPersegiPanjang extends PersegiPanjang implements Benda3D,Runnable {
     private double tinggiBalok;
     private double volumeBalok;
     private double luasPermukaanBalok;
@@ -17,6 +17,11 @@ public class PrismaPersegiPanjang extends PersegiPanjang implements Benda3D {
     public PrismaPersegiPanjang(double panjang, double lebar, double tinggiBalok) {
         super(panjang, lebar);
         this.tinggiBalok = tinggiBalok;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung " + getNama());
         volumeBalok = hitungVolume();
         luasPermukaanBalok = hitungLuasPermukaan();
     }

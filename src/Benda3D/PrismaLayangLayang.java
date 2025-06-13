@@ -9,13 +9,20 @@ import java.util.*;
 /**
  * 
  */
-public class PrismaLayangLayang extends LayangLayang implements Benda3D {
+public class PrismaLayangLayang extends LayangLayang implements Benda3D, Runnable{
     private double tinggiPrismaLayangLayang;
     private double volumePrismaLayangLayang;
     private double luasPermukaanPrismaLayangLayang;
 
     public PrismaLayangLayang(double diagonal1, double diagonal2, double sisi1, double sisi2, double tinggiPrismaLayangLayang) {
         super(diagonal1, diagonal2, sisi1, sisi2);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung " + getNama());
+        this.volumePrismaLayangLayang = hitungVolume();
+        this.luasPermukaanPrismaLayangLayang = hitungLuasPermukaan();
     }
 
     @Override

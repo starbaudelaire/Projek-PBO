@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class PrismaTrapesium extends Trapesium implements Benda3D {
+public class PrismaTrapesium extends Trapesium implements Benda3D, Runnable{
     private double tinggiPrismaTrapesium;
     private double sisiA, sisiB, sisiC, sisiD;
     private double volumePrismaTrapesium;
@@ -24,6 +24,11 @@ public class PrismaTrapesium extends Trapesium implements Benda3D {
         this.sisiD = sisiD;
         this.tinggiPrismaTrapesium = tinggiPrismaTrapesium;
         this.luasSisiTegak = hitungLuasSisiTegak();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung " + getNama());
         volumePrismaTrapesium = hitungVolume();
         luasPermukaanPrismaTrapesium = hitungLuasPermukaan();
     }
