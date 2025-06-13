@@ -5,7 +5,7 @@ import Benda.Benda2D;
 /**
  * 
  */
-public class Trapesium extends Benda2D {
+public class Trapesium extends Benda2D implements Runnable {
     public double sisiSejajar1;
     public double sisiSejajar2;
     public double tinggi;
@@ -18,6 +18,13 @@ public class Trapesium extends Benda2D {
         this.sisiSejajar2 = sisiSejajar2;
         this.tinggi = tinggi;
         this.sisiMiring = 0;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Trapesium");
+        this.luasTrapesium = hitungLuas();
+        this.kelilingTrapesium = hitungKeliling();
     }
 
     @Override

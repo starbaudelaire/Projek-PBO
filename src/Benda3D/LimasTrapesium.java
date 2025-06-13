@@ -6,9 +6,6 @@ import Benda2D.Trapesium;
 import java.io.*;
 import java.util.*;
 
-/**
- * 
- */
 public class LimasTrapesium extends Trapesium implements Benda3D {
     private double tinggiLimas;
     private double tinggiSisiTegak1;

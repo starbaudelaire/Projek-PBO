@@ -9,12 +9,17 @@ import java.util.*;
 /**
  * 
  */
-public class Bola extends Lingkaran implements Benda3D {
+public class Bola extends Lingkaran implements Benda3D,Runnable {
     private double volumeBola;
     private double luasPermukaanBola;
 
     public Bola(double jariJari) {
         super(jariJari);
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Bola");
         volumeBola = hitungVolume();
         luasPermukaanBola = hitungLuasPermukaan();
     }

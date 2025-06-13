@@ -3,7 +3,7 @@ package Benda2D;
 /**
  * 
  */
-public class TemberengLingkaran extends JuringLingkaran {
+public class TemberengLingkaran extends JuringLingkaran implements Runnable{
 
     private double taliBusur;
     private double busur;
@@ -15,8 +15,13 @@ public class TemberengLingkaran extends JuringLingkaran {
         super(jariJari, sudut);
         this.taliBusur = taliBusur;
         this.busur = busur;
-        luasTemberengLingkaran = hitungLuas();
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Tembereng Lingkaran");
         KelilingTemberengLingkaran = hitungKeliling();
+        luasTemberengLingkaran = hitungLuas();
     }
 
     @Override

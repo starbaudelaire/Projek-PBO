@@ -5,7 +5,7 @@ import Benda.Benda2D;
 /**
  * 
  */
-public class Lingkaran extends Benda2D {
+public class Lingkaran extends Benda2D implements Runnable{
 
     public double jariJari;
     private double luasLingkaran;
@@ -14,6 +14,11 @@ public class Lingkaran extends Benda2D {
 
     public Lingkaran(double jariJari) {
         this.jariJari = jariJari;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Lingkaran");
         luasLingkaran = hitungLuas();
         kelilingLingkaran = hitungKeliling();
     }

@@ -6,7 +6,7 @@ import Benda2D.LayangLayang;
 import java.io.*;
 import java.util.*;
 
-public class LimasLayangLayang extends LayangLayang implements Benda3D {
+public class LimasLayangLayang extends LayangLayang implements Benda3D, Runnable{
     private double tinggiLimas;
     private double tinggiSisiTegak1;
     private double tinggiSisiTegak2;
@@ -18,6 +18,11 @@ public class LimasLayangLayang extends LayangLayang implements Benda3D {
         this.tinggiLimas = tinggiLimas;
         this.tinggiSisiTegak1 = tinggiSisiTegak1;
         this.tinggiSisiTegak2 = tinggiSisiTegak2;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung " + getNama());
         volumeLimasLayangLayang = hitungVolume();
         luasPermukaanLimasLayangLayang = hitungLuas();
     }

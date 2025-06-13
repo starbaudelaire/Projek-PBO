@@ -5,7 +5,7 @@ import Benda.Benda2D;
 /**
  * 
  */
-public class PersegiPanjang extends Benda2D {
+public class PersegiPanjang extends Benda2D implements Runnable{
 
     public double panjang;
     public double lebar;
@@ -15,6 +15,11 @@ public class PersegiPanjang extends Benda2D {
     public PersegiPanjang(double panjang, double lebar) {
         this.panjang = panjang;
         this.lebar = lebar;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Persegi Panjang");
         luasPersegiPanjang = hitungLuas();
         kelilingPersegiPanjang = hitungKeliling();
     }

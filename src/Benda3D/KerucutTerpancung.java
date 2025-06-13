@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class KerucutTerpancung extends Lingkaran implements Benda3D {
+public class KerucutTerpancung extends Lingkaran implements Benda3D,Runnable {
     private double jariJariAtas;
     private double garisPelukis;
     private double tinggi;
@@ -21,6 +21,11 @@ public class KerucutTerpancung extends Lingkaran implements Benda3D {
         super(jariJari);
         this.jariJariAtas = jariJariAtas;
         this.tinggi = tinggi;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Kerucut Terpancung");
         garisPelukis = hitungGarisPelukis();
         luasSelimut = hitungLuasSelimut();
         volumeKerucutTerpancung = hitungVolume();

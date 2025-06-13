@@ -9,7 +9,7 @@ import java.util.*;
 /**
  * 
  */
-public class LimasSegitiga extends Segitiga implements Benda3D {
+public class LimasSegitiga extends Segitiga implements Benda3D,Runnable {
     private double tinggiLimasSegitiga;
     private double volumeLimasSegitiga;
     private double luasPermukaanLimasSegitiga;

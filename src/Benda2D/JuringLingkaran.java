@@ -6,7 +6,7 @@ import java.util.*;
 /**
  * 
  */
-public class JuringLingkaran extends Lingkaran {
+public class JuringLingkaran extends Lingkaran implements Runnable {
     public double sudut;
     private double luasJuringLingkaran;
     private double kelilingJuringLingkaran;
@@ -14,6 +14,11 @@ public class JuringLingkaran extends Lingkaran {
     public JuringLingkaran(double jariJari, double sudut) {
         super(jariJari);
         this.sudut = sudut;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Juring Lingkaran");
         luasJuringLingkaran = hitungLuas();
         kelilingJuringLingkaran = hitungKeliling();
     }

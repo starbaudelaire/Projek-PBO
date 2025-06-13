@@ -2,10 +2,12 @@ package Benda2D;
 
 import Benda.Benda2D;
 
+import java.io.Serializable;
+
 /**
  * 
  */
-public class BelahKetupat extends Benda2D {
+public class BelahKetupat extends Benda2D implements Runnable{
     public double diagonal1;
     public double diagonal2;
     private double sisiMiringBelahKetupat;
@@ -16,6 +18,11 @@ public class BelahKetupat extends Benda2D {
         this.diagonal1 = diagonal1;
         this.diagonal2 = diagonal2;
         this.sisiMiringBelahKetupat = 0.0;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Belah Ketupat");
         this.luasBelahKetupat = hitungLuas();
         this.kelilingBelahKetupat = hitungKeliling();
     }

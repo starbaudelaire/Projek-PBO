@@ -5,7 +5,7 @@ import Benda.Benda2D;
 /**
  * 
  */
-public class JajarGenjang extends Benda2D {
+public class JajarGenjang extends Benda2D implements Runnable {
 
     public double alas;
     public double tinggi;
@@ -18,6 +18,10 @@ public class JajarGenjang extends Benda2D {
         this.alas = alas;
         this.tinggi = tinggi;
         this.sudutLancip = sudutLancip;
+    }
+    @Override
+    public void run() {
+        System.out.println("Menghitung Jajar Genjang");
         this.luasJajarGenjang = hitungLuas();
         this.kelilingJajarGenjang = hitungKeliling();
     }

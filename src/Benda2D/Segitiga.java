@@ -5,7 +5,7 @@ import Benda.Benda2D;
 /**
  * 
  */
-public class Segitiga extends Benda2D {
+public class Segitiga extends Benda2D implements Runnable{
 
     public double sisi;
     public double tinggi;
@@ -15,6 +15,11 @@ public class Segitiga extends Benda2D {
     public Segitiga(double sisi, double tinggi) {
         this.sisi = sisi;
         this.tinggi = tinggi;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Segitiga");
         this.luasSegitiga = hitungLuas();
         this.kelilingSegitiga = hitungKeliling();
     }

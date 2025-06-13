@@ -5,7 +5,7 @@ import Benda.Benda2D;
 /**
  * 
  */
-public class LayangLayang extends Benda2D {
+public class LayangLayang extends Benda2D implements Runnable {
 
     public double diagonal1;
     public double diagonal2;
@@ -19,6 +19,11 @@ public class LayangLayang extends Benda2D {
         this.diagonal2 = diagonal2;
         this.sisi1 = sisi1;
         this.sisi2 = sisi2;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Menghitung Layang-Layang");
         luasLayangLayang = hitungLuas();
         kelilingLayangLayang = hitungKeliling();
     }
