@@ -15,6 +15,7 @@ public class BelahKetupat extends Benda2D implements Runnable{
     private double kelilingBelahKetupat;
 
     public BelahKetupat(double diagonal1, double diagonal2) {
+        System.out.println("TEST");
         this.diagonal1 = diagonal1;
         this.diagonal2 = diagonal2;
         this.sisiMiringBelahKetupat = 0.0;
