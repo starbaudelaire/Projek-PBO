@@ -1,25 +1,25 @@
-package View.ViewBangun2D.Persegi;
+package View.ViewBangun2D.Lingkaran;
 
-import Benda2D.Persegi;
+import Benda2D.Lingkaran;
 import javax.swing.*;
 import java.awt.*;
 
-public class PersegiView extends JFrame {
+public class LingkaranView extends JFrame {
 
-    Persegi persegi;
-    JTextField jTextFieldSisi = new JTextField();
+    Lingkaran lingkaran;
+    JTextField jTextFieldJariJari = new JTextField();
 
-    public PersegiView() {
+    public LingkaranView() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Kalkulator Persegi");
+        setTitle("Kalkulator Lingkaran");
     }
 
-    public PersegiView(Persegi persegi) {
-        this.persegi = persegi;
+    public LingkaranView(Lingkaran lingkaran) {
+        this.lingkaran = lingkaran;
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Kalkulator Persegi");
+        setTitle("Kalkulator Lingkaran");
     }
 
     private void initComponents() {
@@ -27,23 +27,23 @@ public class PersegiView extends JFrame {
         setSize(500, 350);
         setLayout(null);
 
-        JLabel jLabelTitle = new JLabel("PERSEGI");
+        JLabel jLabelTitle = new JLabel("LINGKARAN");
         jLabelTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
-        jLabelTitle.setBounds(180, 20, 200, 37);
+        jLabelTitle.setBounds(150, 20, 200, 37);
         add(jLabelTitle);
 
         JSeparator jSeparator1 = new JSeparator();
         jSeparator1.setBounds(0, 70, 500, 10);
         add(jSeparator1);
 
-        JLabel jLabelSisi = new JLabel("Sisi :");
-        jLabelSisi.setFont(new Font("Tahoma", Font.BOLD, 14));
-        jLabelSisi.setBounds(70, 100, 150, 25);
-        add(jLabelSisi);
+        JLabel jLabelJariJari = new JLabel("Jari-Jari :");
+        jLabelJariJari.setFont(new Font("Tahoma", Font.BOLD, 14));
+        jLabelJariJari.setBounds(70, 100, 150, 25);
+        add(jLabelJariJari);
 
-        jTextFieldSisi.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        jTextFieldSisi.setBounds(230, 100, 200, 25);
-        add(jTextFieldSisi);
+        jTextFieldJariJari.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        jTextFieldJariJari.setBounds(230, 100, 200, 25);
+        add(jTextFieldJariJari);
 
         JSeparator jSeparator2 = new JSeparator();
         jSeparator2.setBounds(0, 250, 500, 10);
@@ -68,13 +68,13 @@ public class PersegiView extends JFrame {
 
         jButtonsSave.addActionListener(e -> {
             try {
-                double sisi = Double.parseDouble(jTextFieldSisi.getText());
-                if (sisi <= 0) {
+                double jariJari = Double.parseDouble(jTextFieldJariJari.getText());
+                if (jariJari <= 0) {
                     throw new NumberFormatException("Input tidak boleh nol atau negatif!");
                 }
-                Persegi newPersegi = new Persegi(sisi);
+                Lingkaran newLingkaran = new Lingkaran(jariJari);
 
-                Thread calcThread = new Thread(newPersegi);
+                Thread calcThread = new Thread(newLingkaran);
                 calcThread.start();
                 try {
                     calcThread.join();
@@ -82,20 +82,20 @@ public class PersegiView extends JFrame {
                     ex.printStackTrace();
                 }
 
-                new HasilPersegiView(newPersegi).setVisible(true);
+                new HasilLingkaranView(newLingkaran).setVisible(true);
                 dispose();
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Input tidak valid: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 
-        jButtonReset.addActionListener(e -> jTextFieldSisi.setText(""));
+        jButtonReset.addActionListener(e -> jTextFieldJariJari.setText(""));
         jButtonClose.addActionListener(e -> dispose());
     }
 
-    void cek(){
-        if(persegi != null){
-            jTextFieldSisi.setText(String.valueOf(persegi.sisi));
+    void cek() {
+        if (lingkaran != null) {
+            jTextFieldJariJari.setText(String.valueOf(lingkaran.getJariJari()));
         }
     }
 }

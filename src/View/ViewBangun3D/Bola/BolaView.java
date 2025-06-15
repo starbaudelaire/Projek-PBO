@@ -1,25 +1,25 @@
-package View.ViewBangun2D.Persegi;
+package View.ViewBangun3D.Bola;
 
-import Benda2D.Persegi;
+import Benda3D.Bola;
 import javax.swing.*;
 import java.awt.*;
 
-public class PersegiView extends JFrame {
+public class BolaView extends JFrame {
 
-    Persegi persegi;
-    JTextField jTextFieldSisi = new JTextField();
+    Bola bola;
+    JTextField jTextFieldJari = new JTextField();
 
-    public PersegiView() {
+    public BolaView() {
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Kalkulator Persegi");
+        setTitle("Kalkulator Bola");
     }
 
-    public PersegiView(Persegi persegi) {
-        this.persegi = persegi;
+    public BolaView(Bola bola) {
+        this.bola = bola;
         initComponents();
         setLocationRelativeTo(null);
-        setTitle("Kalkulator Persegi");
+        setTitle("Kalkulator Bola");
     }
 
     private void initComponents() {
@@ -27,23 +27,23 @@ public class PersegiView extends JFrame {
         setSize(500, 350);
         setLayout(null);
 
-        JLabel jLabelTitle = new JLabel("PERSEGI");
+        JLabel jLabelTitle = new JLabel("BOLA");
         jLabelTitle.setFont(new Font("Tahoma", Font.BOLD, 30));
-        jLabelTitle.setBounds(180, 20, 200, 37);
+        jLabelTitle.setBounds(200, 20, 100, 37);
         add(jLabelTitle);
 
         JSeparator jSeparator1 = new JSeparator();
         jSeparator1.setBounds(0, 70, 500, 10);
         add(jSeparator1);
 
-        JLabel jLabelSisi = new JLabel("Sisi :");
-        jLabelSisi.setFont(new Font("Tahoma", Font.BOLD, 14));
-        jLabelSisi.setBounds(70, 100, 150, 25);
-        add(jLabelSisi);
+        JLabel jLabelJari = new JLabel("Jari-Jari :");
+        jLabelJari.setFont(new Font("Tahoma", Font.BOLD, 14));
+        jLabelJari.setBounds(70, 100, 150, 25);
+        add(jLabelJari);
 
-        jTextFieldSisi.setFont(new Font("Tahoma", Font.PLAIN, 14));
-        jTextFieldSisi.setBounds(230, 100, 200, 25);
-        add(jTextFieldSisi);
+        jTextFieldJari.setFont(new Font("Tahoma", Font.PLAIN, 14));
+        jTextFieldJari.setBounds(230, 100, 200, 25);
+        add(jTextFieldJari);
 
         JSeparator jSeparator2 = new JSeparator();
         jSeparator2.setBounds(0, 250, 500, 10);
@@ -68,13 +68,13 @@ public class PersegiView extends JFrame {
 
         jButtonsSave.addActionListener(e -> {
             try {
-                double sisi = Double.parseDouble(jTextFieldSisi.getText());
-                if (sisi <= 0) {
+                double jari = Double.parseDouble(jTextFieldJari.getText());
+                if (jari <= 0) {
                     throw new NumberFormatException("Input tidak boleh nol atau negatif!");
                 }
-                Persegi newPersegi = new Persegi(sisi);
+                Bola newBola = new Bola(jari); //
 
-                Thread calcThread = new Thread(newPersegi);
+                Thread calcThread = new Thread(newBola);
                 calcThread.start();
                 try {
                     calcThread.join();
@@ -82,20 +82,24 @@ public class PersegiView extends JFrame {
                     ex.printStackTrace();
                 }
 
-                new HasilPersegiView(newPersegi).setVisible(true);
+                new HasilBolaView(newBola).setVisible(true);
                 dispose();
             } catch (NumberFormatException ex) {
                 JOptionPane.showMessageDialog(null, "Input tidak valid: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
             }
         });
 
-        jButtonReset.addActionListener(e -> jTextFieldSisi.setText(""));
+        jButtonReset.addActionListener(e -> jTextFieldJari.setText(""));
         jButtonClose.addActionListener(e -> dispose());
     }
 
     void cek(){
-        if(persegi != null){
-            jTextFieldSisi.setText(String.valueOf(persegi.sisi));
+        if(bola != null){
+            jTextFieldJari.setText(String.valueOf(bola.getJariJari()));
         }
+    }
+
+    public static void main(String[] args) {
+        new  BolaView().setVisible(true);
     }
 }
