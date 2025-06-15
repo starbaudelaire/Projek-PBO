@@ -7,6 +7,7 @@ import java.awt.*;
 public class TemberengBolaView extends JFrame {
 
     TemberengBola temberengBola;
+    int es;
     JTextField jTextFieldJari = new JTextField();
     JTextField jTextFieldTinggi = new JTextField();
 
